@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chinasoft.shop.mapper.GoodsMapper" >
+  <insert id="add" parameterType="goods" >
+    insert into goods values (#{id}, #{name}, #{salePrice}, #{marketPrice}, #{stock}, #{number}, 
+      #{image}, #{description}, #{total}, #{commentNums}, #{cid}, #{categoryName})
+  </insert>
+  
+  <update id="edit" parameterType="goods" >
+    update goods set name=#{name}, salePrice=#{salePrice}, marketPrice=#{marketPrice}, 
+    stock=#{stock},number=#{number}, image=#{image}, description=#{description}, total=#{total}, 
+    commentNums=#{commentNums}, cid=#{cid}, categoryName=#{categoryName} where id=#{id}
+  </update>
+ 
+  <select id="findAll" resultType="goods">
+  	select * from goods
+  </select>
+  
+  <select id="findByName" resultType="goods">
+  	select * from goods where name=#{name}
+  </select>
+  
+  <select id="findById" resultType="goods">
+  	select * from goods where id=#{id}
+  </select>
+  
+  <delete id="delete">
+  	delete from goods where id=#{id}
+  </delete>
+  
+  <select id="findByCid" resultType="goods">
+  	select * from goods where cid= #{cid}
+  </select>
+  
+  <select id="findIdByName" >
+  	select id from goods where name= #{name}
+  </select>
+  
+  <select id="findPriceByName" >
+  	select salePrice from goods where name= #{name}
+  </select>
+  
+</mapper>

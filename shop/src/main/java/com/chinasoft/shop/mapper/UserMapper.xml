@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chinasoft.shop.mapper.UserMapper" >
+  <insert id="addUser" parameterType="user">
+  	insert user value(#{id},#{name},#{password},#{email},#{avatar},#{balance},#{total},#{orderNums},
+  		#{evaluateNums},#{payNums},#{receiptNums},#{states},#{token},#{phone},#{regTime})
+  </insert>
+  <select id="findById" resultType="user">
+  	select * from user where id=#{token}
+  </select>
+  <delete id="delete">
+  	delete from user where id=#{id}
+  </delete>
+  <update id="update" parameterType="user">
+  	update user set states=#{states} where id=#{id}
+  </update> 
+  <select id="findUserByName" parameterType="user" resultType="user">
+  	select * from user where name=#{name}
+  </select>
+</mapper>

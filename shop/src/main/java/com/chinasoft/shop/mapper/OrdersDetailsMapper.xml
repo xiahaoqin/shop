@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chinasoft.shop.mapper.OrdersDetailsMapper" >
+  <insert id="add" parameterType="ordersDetails" >
+    insert into ordersdetails (id, nums, oid, 
+      gid, gname, gprice, 
+      subtotal)
+    values (#{id,jdbcType=VARCHAR}, #{nums,jdbcType=INTEGER}, #{oid,jdbcType=VARCHAR}, 
+      #{gid,jdbcType=VARCHAR}, #{gname,jdbcType=VARCHAR}, #{gprice,jdbcType=DOUBLE}, 
+      #{subtotal,jdbcType=DOUBLE})
+  </insert>
+ 
+</mapper>
